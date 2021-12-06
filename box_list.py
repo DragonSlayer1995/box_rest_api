@@ -31,3 +31,17 @@ def validate_box_make_date(box_make_date):
         if current_date_minus_year <= make_date <= current_date:
             result = True
     return result
+
+
+def validate_box(name, date):
+    name_result = validate_box_name(name)
+    date_result = validate_box_make_date(date)
+    failed_fields = []
+    if all([name_result, date_result]):
+        return True,
+    else:
+        if not validate_box_name(name):
+            failed_fields.append('name')
+        if not validate_box_make_date(date):
+            failed_fields.append('make_date')
+        return False, failed_fields

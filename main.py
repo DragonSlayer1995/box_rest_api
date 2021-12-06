@@ -1,5 +1,5 @@
 from flask import Flask, abort, request, Response
-from box_list import ALL_BOXES, is_guid_valid, validate_box_name, validate_box_make_date
+from box_list import ALL_BOXES, is_guid_valid, validate_box
 
 app = Flask(__name__)
 
@@ -23,11 +23,12 @@ def get_box_by_id(box_id):
 def create_box():
     body = request.get_json()
     if body:
-        print('Body is not empty')
-        if validate_box_name(body['name']) and validate_box_make_date(body['make_date']):
-            return 'box was created'
+        validation_result = validate_box(body['name'], body['make_date'])
+        if validation_result[0]:  # 0 - bool result
+            return Response(status=200)
         else:
-            return Response(f"Problems with name: {body['name']}", status=400)
+            return Response(f"Problems with the next fields: {validation_result[1]}",  # 1 - list of failed fields
+                            status=400)
 
 
 if __name__ == '__main__':
