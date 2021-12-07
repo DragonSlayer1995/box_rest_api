@@ -1,33 +1,5 @@
 import re
-import uuid
 from datetime import datetime, timedelta
-from box import Box
-from flask import Response
-
-first_box = Box('2f11868c-a367-48dc-b4d1-c6706f5258f4', 'simple box', 12, '2021-10-15')
-
-ALL_BOXES = {
-    first_box.id: first_box
-}
-
-
-def create_new_box(name, date):
-    make_date = datetime.strptime(date, '%Y-%m-%d').date()
-    current_date = datetime.today().date()
-    age_days = (current_date - make_date).days
-    box = Box(str(uuid.uuid4()), name, age_days, date)
-    ALL_BOXES[box.id] = box
-    return box.id
-
-
-def delete_box(box_id):
-    if is_guid_valid(box_id):
-        if box_id in ALL_BOXES:
-            del ALL_BOXES[box_id]
-        else:
-            Response(status=404)
-    else:
-        Response(status=400)
 
 
 def is_guid_valid(guid):
