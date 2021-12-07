@@ -20,7 +20,7 @@ ALL_BOXES = {
 
 def create_new_box(body):
     validation_result = validate_box(body['name'], body['make_date'])
-    if validation_result[0]:
+    if validation_result[0]:  # 0 - bool result
         make_date = datetime.strptime(body['make_date'], '%Y-%m-%d').date()
         current_date = datetime.today().date()
         age_days = (current_date - make_date).days
