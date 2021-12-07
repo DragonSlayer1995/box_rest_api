@@ -1,5 +1,5 @@
 from flask import Flask, abort, request, Response
-from box_list import ALL_BOXES, is_guid_valid, validate_box
+from box_list import ALL_BOXES, is_guid_valid, validate_box, create_new_box
 
 app = Flask(__name__)
 
@@ -25,7 +25,7 @@ def create_box():
     if body:
         validation_result = validate_box(body['name'], body['make_date'])
         if validation_result[0]:  # 0 - bool result
-            return Response(status=200)
+            return create_new_box(body['name'], body['make_date'])
         else:
             return Response(f"Problems with the next fields: {validation_result[1]}",  # 1 - list of failed fields
                             status=400)
