@@ -1,11 +1,11 @@
 import pytest
 
 from tests.helpers.wrong_box_assert_helper import wrong_box_assert
-from tests.test_data.box_test_data import BOXES
+from tests.test_data.box_test_data import BOXES, NOT_EXISTING_GUID, NOT_VALID_GUID
 
 
 @pytest.mark.negative
-@pytest.mark.parametrize('guid, status_code', (('2f11868c-a367-48dc-b4d1-c6706f5258f5', 404), ('2f11868c', 400)))
+@pytest.mark.parametrize('guid, status_code', ((NOT_EXISTING_GUID, 404), (NOT_VALID_GUID, 400)))
 def test_negative_get_box(guid, status_code, box_client):
     response = box_client.get_box(guid)
     response.check_status(status_code)
@@ -21,7 +21,7 @@ def test_negative_create_box(box_client, box_data):
 
 
 @pytest.mark.negative
-@pytest.mark.parametrize('guid, status_code', (('2f11868c-a367-48dc-b4d1-c6706f5258f5', 404), ('2f11868c', 400)))
+@pytest.mark.parametrize('guid, status_code', ((NOT_EXISTING_GUID, 404), (NOT_VALID_GUID, 400)))
 def test_negative_delete_box(guid, status_code, box_client):
     response = box_client.delete_box(guid)
     response.check_status(status_code)

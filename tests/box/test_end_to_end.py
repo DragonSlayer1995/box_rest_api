@@ -20,6 +20,3 @@ def test_end_to_end(box_client, box_data):
 
     delete_response = box_client.delete_box(guid)
     delete_response.check_status(200)
-
-    # get_response = box_client.get_box(guid)
-    # get_response.check_status(404)

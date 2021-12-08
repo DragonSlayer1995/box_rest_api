@@ -25,7 +25,6 @@ class ApiClient:
         return ApiResponse(self.session.get(self._build_url(url), headers=headers, cookies=cookies))
 
 
-# api response
 class ApiResponse:
     def __init__(self, response):
         self._response = response

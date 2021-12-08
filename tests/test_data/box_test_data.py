@@ -7,3 +7,7 @@ BOXES = (
     {'name': 'Коробка', 'make_date': '2018-10-15', 'box_type': 'old_make_date'},
     {'name': 'Коробка', 'make_date': '2022-10-15', 'box_type': 'future_make_date'}
 )
+
+EXISTING_GUID = '2f11868c-a367-48dc-b4d1-c6706f5258f4'
+NOT_EXISTING_GUID = '2f11868c-a367-48dc-b4d1-c6706f5258f5'
+NOT_VALID_GUID = '2f11868c'
