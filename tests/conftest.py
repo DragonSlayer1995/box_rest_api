@@ -10,7 +10,7 @@ def box_client():
 
 @pytest.fixture(scope='session')
 def expected_box_data():
-    return {'age_days': 12, 'id': '2f11868c-a367-48dc-b4d1-c6706f5258f4', 'name': 'simple box'}
+    return {'age_days': 12, 'id': '2f11868c-a367-48dc-b4d1-c6706f5258f4', 'name': 'просто коробка'}
 
 
 @pytest.fixture(scope='session')

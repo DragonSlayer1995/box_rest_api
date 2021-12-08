@@ -1,0 +1,5 @@
+Flask==2.0.2
+pytest==6.2.2
+PyHamcrest==2.0.2
+deepdiff==5.2.3
+requests==2.26.0
