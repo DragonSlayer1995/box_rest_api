@@ -10,7 +10,7 @@ def is_guid_valid(guid):
 def validate_box_name(box_name):
     result = False
     if box_name and validate_cyrillic(box_name):
-        if 5 <= len(box_name) <= 30:
+        if 5 <= len(box_name) <= 20:
             result = True
     return result
 

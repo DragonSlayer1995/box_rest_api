@@ -15,4 +15,4 @@ def expected_box_data():
 
 @pytest.fixture(scope='session')
 def box_data():
-    return {'name': 'Коробка ВЕЛИКОЛЕПНАЯ Номер 999', 'make_date': '2021-10-15'}
+    return {'name': 'Коробка5', 'make_date': '2021-10-15'}
