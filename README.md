@@ -15,3 +15,8 @@
 - End2End - `pytest -m e2e`
  
 You can find more about markers in `pytest.ini` file
+
+#### Build docker image and run container
+- Go to project directory
+- Build image ``docker build --tag <your_tag> .``
+- Create and run container ``docker run -d -p 5000:5000 <your_tag>``
