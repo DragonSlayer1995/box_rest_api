@@ -17,5 +17,5 @@
 You can find more about markers in `pytest.ini` file
 
 #### Run tests by docker-compose
-- Go to project directory
+- Go to the project directory
 - Run docker-compose - ``docker-compose up``
