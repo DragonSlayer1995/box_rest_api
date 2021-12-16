@@ -5,7 +5,7 @@ from tests.box_client import BoxClient
 
 @pytest.fixture(scope='session')
 def box_client():
-    return BoxClient('http://127.0.0.1:5000/')
+    return BoxClient('http://box:5000/')
 
 
 @pytest.fixture(scope='session')
